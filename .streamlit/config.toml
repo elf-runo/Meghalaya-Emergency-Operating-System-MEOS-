@@ -1,0 +1,21 @@
+[theme]
+# The primary accent color for interactive elements (like the submit buttons)
+primaryColor = "#2563eb"
+
+# The background color for the main content area (a clean, professional light gray)
+backgroundColor = "#f8fafc"
+
+# The background color for the sidebar (pure white for contrast)
+secondaryBackgroundColor = "#ffffff"
+
+# The text color
+textColor = "#0f172a"
+
+# The font style
+font = "sans serif"
+
+[server]
+# Hides the "Made with Streamlit" footer and hamburger menu in the top right
+# This is crucial for making it look like your own proprietary software during the demo
+enableCORS = false
+headless = true
