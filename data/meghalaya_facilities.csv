@@ -1,0 +1,21 @@
+facility_id,name,lat,lon,level,ownership,district,has_ed,has_icu,has_nicu,has_blood_bank,has_obgyn,has_ortho,is_network_member
+F001,Civil Hospital Shillong,25.5714,91.8816,Secondary,Government,East Khasi Hills,1,1,1,1,1,1,1
+F002,NEIGRIHMS Hub,25.5925,91.9333,Tertiary,Government,East Khasi Hills,1,1,1,1,1,1,1
+F003,Ganesh Das MCH Hospital,25.5822,91.8844,Secondary,Government,East Khasi Hills,1,1,1,1,1,0,1
+F004,Tura Civil Hospital,25.5133,90.2201,Secondary,Government,West Garo Hills,1,1,1,1,1,1,1
+F005,Jowai Civil Hospital,25.4475,92.2031,Secondary,Government,West Jaintia Hills,1,1,0,1,1,1,1
+F006,Nongpoh Civil Hospital,25.9014,91.8789,Secondary,Government,Ri-Bhoi,1,1,0,1,1,0,1
+F007,Williamnagar Civil Hospital,25.4951,90.6167,Secondary,Government,East Garo Hills,1,1,0,1,1,0,1
+F008,Mairang Civil Hospital,25.5667,91.6333,Secondary,Government,Eastern West Khasi Hills,1,0,0,0,1,0,1
+F009,Baghmara Civil Hospital,25.2167,90.6333,Secondary,Government,South Garo Hills,1,0,0,0,1,0,1
+F010,Ampati Civil Hospital,25.4667,89.9333,Secondary,Government,South West Garo Hills,1,0,0,0,1,0,1
+F011,Nongstoin Civil Hospital,25.5219,91.2689,Secondary,Government,West Khasi Hills,1,1,0,1,1,1,1
+F012,Khliehriat CHC,25.3583,92.3667,CHC,Government,East Jaintia Hills,1,0,0,0,1,0,1
+F013,Mawkyrwat CHC,25.3667,91.4500,CHC,Government,South West Khasi Hills,1,0,0,0,1,0,1
+F014,Resubelpara CHC,25.9000,90.6000,CHC,Government,North Garo Hills,1,0,0,0,1,0,1
+F015,Smit CHC,25.5181,91.9167,CHC,Government,East Khasi Hills,1,0,0,0,1,0,1
+F016,Pynursla CHC,25.3167,91.9000,CHC,Government,East Khasi Hills,1,0,0,0,1,0,1
+P001,Bethany Hospital (Private),25.5847,91.9050,Tertiary,Private,East Khasi Hills,1,1,1,1,1,1,0
+P002,Nazareth Hospital (Private),25.5680,91.8860,Secondary,Private,East Khasi Hills,1,1,1,1,1,1,0
+P003,Woodland Hospital (Private),25.5750,91.8920,Secondary,Private,East Khasi Hills,1,1,0,1,1,1,0
+P004,Christian Hospital Tura (Private),25.5180,90.2150,Secondary,Private,West Garo Hills,1,1,0,1,1,0,0
