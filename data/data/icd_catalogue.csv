@@ -1,0 +1,100 @@
+O72.0,Third-stage haemorrhage,Maternal,12,55,IV fluids;Uterotonics;TXA,has_ed;has_icu;has_obgyn;has_blood_bank
+O72.1,Immediate postpartum haemorrhage,Maternal,12,55,IV fluids;Uterotonics;TXA,has_ed;has_icu;has_obgyn;has_blood_bank
+O14.1,Severe pre-eclampsia,Maternal,12,55,Magnesium sulfate;BP control,has_ed;has_icu;has_obgyn
+O15.0,Eclampsia in pregnancy,Maternal,12,55,Seizure control;Airway protection,has_ed;has_icu;has_obgyn
+O64.0,Obstructed labour due to malposition,Maternal,12,55,IV fluids;Positioning,has_ed;has_obgyn
+O71.1,Rupture of uterus,Maternal,12,55,Fluid resuscitation;Crossmatch,has_ed;has_icu;has_obgyn;has_blood_bank
+O85,Puerperal sepsis,Maternal,12,55,IV Antibiotics;Fluids,has_ed;has_icu;has_obgyn
+O44.1,Placenta previa with haemorrhage,Maternal,12,55,IV access;Bed rest;Crossmatch,has_ed;has_obgyn;has_blood_bank
+O00.1,Tubal pregnancy,Maternal,12,55,Pain management;Fluid resuscitation,has_ed;has_obgyn;has_blood_bank
+O60.1,Preterm labour with delivery,Maternal,12,55,Steroids;Tocolytics,has_ed;has_obgyn;has_nicu
+O46.9,Antepartum haemorrhage,Maternal,12,55,IV fluids;Fetal monitoring,has_ed;has_obgyn;has_blood_bank
+O99.4,Diseases of circulatory system in pregnancy,Maternal,12,55,ECG;O2 support,has_ed;has_icu;has_obgyn
+O26.6,Liver disorders in pregnancy,Maternal,12,55,LFT;Observation,has_ed;has_obgyn
+O90.0,Disruption of Caesarean section wound,Maternal,12,55,Wound care;Antibiotics,has_ed;has_obgyn
+O88.2,Obstetric blood-clot embolism,Maternal,12,55,Anticoagulation;O2 support,has_ed;has_icu;has_obgyn
+S06.5,Traumatic subdural haemorrhage,Trauma,0,120,Airway protection;IV access,has_ed;has_icu;has_blood_bank
+S06.0,Concussion,Trauma,0,120,Neuro checks;Immobilization,has_ed
+S06.4,Epidural haemorrhage,Trauma,0,120,Neuro monitoring;IV access,has_ed;has_icu;has_blood_bank
+S36.1,Injury of liver or gallbladder,Trauma,0,120,Fluid resuscitation;FAST scan,has_ed;has_icu;has_blood_bank
+S36.0,Injury of spleen,Trauma,0,120,Fluid resuscitation;Crossmatch,has_ed;has_icu;has_blood_bank
+S27.3,Other injuries of lung,Trauma,0,120,Chest tube;O2 support,has_ed;has_icu
+S72.0,Fracture of neck of femur,Trauma,0,120,Immobilization;Analgesia,has_ed;has_ortho;has_blood_bank
+S82.2,Fracture of shaft of tibia,Trauma,0,120,Splinting;Pain relief,has_ed;has_ortho
+S52.5,Fracture of lower end of radius,Trauma,0,120,Reduction;Splinting,has_ed;has_ortho
+S12.9,Fracture of cervical spine,Trauma,0,120,Hard collar;Log roll,has_ed;has_icu;has_ortho
+S32.1,Fracture of sacrum,Trauma,0,120,Pelvic binder;Pain relief,has_ed;has_ortho;has_blood_bank
+S02.1,Fracture of base of skull,Trauma,0,120,Neuro monitoring;Antibiotics,has_ed;has_icu
+T07,Unspecified multiple trauma,Trauma,0,120,Primary survey;IV fluids,has_ed;has_icu;has_blood_bank;has_ortho
+S37.0,Injury of kidney,Trauma,0,120,Hydration;Monitor output,has_ed;has_icu;has_blood_bank
+T31.2,Burns 20-29% of body surface,Trauma,0,120,Fluid resuscitation;Wound debridement,has_ed;has_icu
+S01.0,Laceration of scalp,Trauma,0,120,Suturing;Cleaning,has_ed
+S62.3,Fracture of metacarpal bones,Trauma,0,120,Splinting,has_ed;has_ortho
+S22.3,Fracture of rib,Trauma,0,120,Analgesia;O2 monitoring,has_ed
+S05.9,Injury of eye and orbit,Trauma,0,120,Eye patch;Visual check,has_ed
+T17.9,Foreign body in respiratory tract,Trauma,0,120,Heimlich;Airway clearance,has_ed;has_icu
+I21.9,Acute myocardial infarction,Cardiac,18,120,Aspirin;Oxygen;IV access,has_ed;has_icu
+I46.9,Cardiac arrest,Cardiac,0,120,CPR;Defibrillation;Adrenaline,has_ed;has_icu
+I20.0,Unstable angina,Cardiac,18,120,Nitroglycerin;Aspirin;ECG,has_ed;has_icu
+I50.9,Heart failure unspecified,Cardiac,0,120,Diuretics;O2 support,has_ed;has_icu
+I44.2,Atrioventricular block complete,Cardiac,0,120,Atropine;Pacing prep,has_ed;has_icu
+I47.2,Ventricular tachycardia,Cardiac,0,120,Amiodarone;Cardioversion,has_ed;has_icu
+I26.9,Pulmonary embolism,Cardiac,18,120,Anticoagulation;O2 support,has_ed;has_icu
+I30.9,Acute pericarditis,Cardiac,0,120,NSAIDs;ECG,has_ed
+I01.9,Acute rheumatic heart disease,Cardiac,5,120,Antibiotics;Anti-inflammatories,has_ed;has_icu
+I33.0,Acute infective endocarditis,Cardiac,0,120,IV Antibiotics;Cultures,has_ed;has_icu
+I42.0,Dilated cardiomyopathy,Cardiac,0,120,Beta blockers;ACE inhibitors,has_ed
+I05.0,Mitral stenosis,Cardiac,12,120,Diuretics;Rate control,has_ed
+I35.0,Nonrheumatic aortic stenosis,Cardiac,40,120,Monitoring;Avoid exertion,has_ed
+I25.1,Atherosclerotic heart disease,Cardiac,30,120,Statins;Lifestyle advice,has_ed
+I48.9,Atrial fibrillation,Cardiac,18,120,Anticoagulation;Rate control,has_ed
+I63.9,Cerebral infarction (Ischemic Stroke),Stroke,18,120,BP control;Glucose check,has_ed;has_icu
+I61.9,Intracerebral haemorrhage,Stroke,18,120,Elevate head;BP control,has_ed;has_icu
+G45.9,Transient ischaemic attack (TIA),Stroke,18,120,Aspirin;Neuro consult,has_ed
+I60.9,Subarachnoid haemorrhage,Stroke,18,120,Nimodipine;BP management,has_ed;has_icu
+I67.2,Cerebral atherosclerosis,Stroke,40,120,Statins;Antiplatelets,has_ed
+G46.3,Brain stem stroke syndrome,Stroke,18,120,Airway protection;Neuro checks,has_ed;has_icu
+I69.4,Sequelae of stroke,Stroke,18,120,Physiotherapy;Speech therapy,has_ed
+I62.9,Intracranial haemorrhage,Stroke,18,120,Neuro checks,has_ed;has_icu
+G40.9,Epilepsy unspecified,Stroke,0,120,Anti-epileptics;Safety,has_ed
+G00.9,Bacterial meningitis,Stroke,0,120,IV Antibiotics;Lumbar puncture,has_ed;has_icu
+G04.9,Encephalitis unspecified,Stroke,0,120,Supportive care;Antivirals,has_ed;has_icu
+I67.1,Cerebral aneurysm nonruptured,Stroke,18,120,Screening;BP control,has_ed
+G06.0,Intracranial abscess,Stroke,0,120,IV Antibiotics;Drainage,has_ed;has_icu
+I67.5,Moyamoya disease,Stroke,0,40,Revascularization prep,has_ed
+G81.9,Hemiplegia unspecified,Stroke,0,120,Rehabilitation,has_ed
+A41.9,Sepsis unspecified,Sepsis,0,120,Antibiotics;IV fluids;Oxygen,has_ed;has_icu
+R57.1,Hypovolaemic shock,Sepsis,0,120,Fluid bolus;Blood products,has_ed;has_icu;has_blood_bank
+A41.0,Sepsis due to Staphylococcus,Sepsis,0,120,Vancomycin;Fluids,has_ed;has_icu
+A41.5,Gram-negative Sepsis,Sepsis,0,120,Broad-spectrum antibiotics,has_ed;has_icu
+A39.2,Acute meningococcaemia,Sepsis,0,120,Ceftriaxone;Isolation,has_ed;has_icu
+R57.2,Septic shock,Sepsis,0,120,Vasopressors;IV Antibiotics,has_ed;has_icu
+J18.9,Pneumonia unspecified,Sepsis,0,120,Antibiotics;Nebulization,has_ed
+N10,Acute tubulo-interstitial nephritis,Sepsis,0,120,Hydration;Antibiotics,has_ed
+K65.0,Acute peritonitis,Sepsis,0,120,Surgery consult;Antibiotics,has_ed;has_icu
+A04.7,Clostridium difficile enterocolitis,Sepsis,0,120,Metronidazole;Isolation,has_ed
+P07.3,Preterm infant (NICU req),Pediatric,0,1,Warmth;O2 support,has_ed;has_nicu
+P22.0,Respiratory distress syndrome of newborn,Pediatric,0,1,Surfactant;CPAP,has_ed;has_nicu
+P36.9,Bacterial sepsis of newborn,Pediatric,0,1,IV Antibiotics;Fluids,has_ed;has_nicu
+P59.9,Neonatal jaundice,Pediatric,0,1,Phototherapy,has_ed;has_nicu
+P21.9,Birth asphyxia,Pediatric,0,1,Resuscitation;O2 support,has_ed;has_nicu
+P10.2,Intraventricular haemorrhage due to birth injury,Pediatric,0,1,Neuro checks;Supportive care,has_ed;has_nicu
+P29.3,Persistent fetal circulation,Pediatric,0,1,O2 support;BP management,has_ed;has_nicu
+P52.9,Intracranial haemorrhage of newborn,Pediatric,0,1,Transfusion;Monitoring,has_ed;has_nicu;has_blood_bank
+P70.4,Neonatal hypoglycaemia,Pediatric,0,1,Glucose infusion,has_ed;has_nicu
+P80.9,Hypothermia of newborn,Pediatric,0,1,Incubator;Warm IV fluids,has_ed;has_nicu
+J96.0,Acute respiratory failure,Other,0,120,Oxygen;Nebulization,has_ed;has_icu
+T65.9,Toxic effect of unspecified substance,Other,0,120,Gastric lavage;Charcoal,has_ed;has_icu
+T63.0,Snake venom poisoning,Other,0,120,Antivenom;Observation,has_ed;has_icu
+N17.9,Acute kidney failure,Other,0,120,Fluid balance;Electrolytes,has_ed;has_icu
+E10.1,Type 1 diabetes with ketoacidosis,Other,0,120,Insulin infusion;Fluids,has_ed;has_icu
+K56.6,Intestinal obstruction,Other,0,120,NPO;NG tube,has_ed;has_icu
+J45.9,Asthma unspecified,Other,0,120,Salbutamol;Steroids,has_ed
+K92.2,Gastrointestinal haemorrhage,Other,0,120,IV fluids;Crossmatch,has_ed;has_icu;has_blood_bank
+F10.2,Alcohol withdrawal,Other,18,120,Benzodiazepines;Thiamine,has_ed
+A82.9,Rabies unspecified,Other,0,120,Vaccination;IgG,has_ed;has_icu
+E86,Volume depletion,Other,0,120,Oral/IV Rehydration,has_ed
+L50.9,Urticaria unspecified,Other,0,120,Antihistamines,has_ed
+R50.9,Fever unspecified,Other,0,120,Paracetamol,has_ed
+R51,Headache,Other,0,120,Analgesia,has_ed
+Z00.0,General medical examination,Other,18,120,Checkup,has_ed
