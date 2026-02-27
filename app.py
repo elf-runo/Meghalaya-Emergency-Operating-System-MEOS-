@@ -111,30 +111,43 @@ init_db()
 # 4. Data Caching Layer (Performance Optimization)
 @st.cache_data
 def load_datasets():
-    """Final absolute path targeting for Meghalaya deployment."""
-    # We are targeting the specific path shown in your 'data/data' screenshot
-    fac_path = 'data/data/meghalaya_facilities.csv'
-    icd_path = 'data/data/icd_catalogue.csv'
+    """Rigorously searches the entire repository for the CSV files."""
+    import os
     
-    try:
-        fac_df = pd.read_csv(fac_path)
-        icd_df = pd.read_csv(icd_path)
-        icd_df['icd10'] = icd_df['icd10'].astype(str).str.strip()
-        return fac_df, icd_df
-    except Exception:
-        # Fallback if you moved them to the first 'data' folder
+    fac_file = 'meghalaya_facilities.csv'
+    icd_file = 'icd_catalogue.csv'
+    
+    found_fac, found_icd = None, None
+
+    # Walk through every folder in the repo to find the files
+    for root, dirs, files in os.walk("."):
+        if fac_file in files:
+            found_fac = os.path.join(root, fac_file)
+        if icd_file in files:
+            found_icd = os.path.join(root, icd_file)
+
+    if found_fac and found_icd:
         try:
-            fac_df = pd.read_csv('data/meghalaya_facilities.csv')
-            icd_df = pd.read_csv('data/icd_catalogue.csv')
+            fac_df = pd.read_csv(found_fac)
+            icd_df = pd.read_csv(found_icd)
             icd_df['icd10'] = icd_df['icd10'].astype(str).str.strip()
             return fac_df, icd_df
         except Exception as e:
-            st.error(f"🚨 FILES NOT IN /data/ OR /data/data/ : {e}")
+            st.error(f"🚨 Error reading found files: {e}")
             st.stop()
+    else:
+        # Diagnostic report if files are truly missing from GitHub
+        st.error("🚨 FILES NOT FOUND IN REPOSITORY")
+        st.info(f"Looking for: {fac_file} and {icd_file}")
+        all_files = []
+        for root, dirs, files in os.walk("."):
+            for f in files:
+                all_files.append(os.path.join(root, f))
+        st.write("Files actually present in your GitHub:", all_files)
+        st.stop()
 
-# CRITICAL: Ensure these global assignments are OUTSIDE the function
+# Assign the results to global variables used by the rest of the app
 facilities_df, icd_catalogue_df = load_datasets()
-
 # 5. Live Geolocation Integration
 def fetch_user_location():
     """Uses streamlit_js_eval to ping the browser's GPS for the Citizen SOS tab."""
