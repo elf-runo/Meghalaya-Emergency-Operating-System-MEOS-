@@ -135,6 +135,8 @@ def load_datasets():
     st.info(f"Current Working Directory: {os.getcwd()}")
     st.info(f"Visible Files: {os.listdir('.')}")
     st.stop()
+# Call the function to actually load the data into the global variables
+facilities_df, icd_catalogue_df = load_datasets()
 
 # 5. Live Geolocation Integration
 def fetch_user_location():
