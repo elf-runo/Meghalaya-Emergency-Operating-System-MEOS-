@@ -12,7 +12,7 @@ import altair as alt
 
 # === 1. CONFIG & DB PERSISTENCE ===
 st.set_page_config(page_title="MEOS: Meghalaya Command", layout="wide")
-st.markdown("""<style>.stMetric { background: white; padding: 15px; border-radius: 8px; border: 1px solid #eee; }</style>""", unsafe_allow_value=True)
+st.markdown("""<style>.stMetric { background: white; padding: 15px; border-radius: 8px; border: 1px solid #eee; }</style>""", unsafe_allow_html=True)
 
 def init_db():
     conn = sqlite3.connect('meos_persistence.db')
