@@ -111,31 +111,28 @@ init_db()
 # 4. Data Caching Layer (Performance Optimization)
 @st.cache_data
 def load_datasets():
-    """Dynamically locates and loads CSV files regardless of nesting."""
-    import os
+    """Final absolute path targeting for Meghalaya deployment."""
+    # We are targeting the specific path shown in your 'data/data' screenshot
+    fac_path = 'data/data/meghalaya_facilities.csv'
+    icd_path = 'data/data/icd_catalogue.csv'
     
-    # Potential paths where the files might be hiding
-    potential_paths = ['', 'data/', 'data/data/']
-    fac_file = 'meghalaya_facilities.csv'
-    icd_file = 'icd_catalogue.csv'
-    
-    fac_df, icd_df = None, None
-    
-    for path in potential_paths:
-        f_path = os.path.join(path, fac_file)
-        i_path = os.path.join(path, icd_file)
-        if os.path.exists(f_path) and os.path.exists(i_path):
-            fac_df = pd.read_csv(f_path)
-            icd_df = pd.read_csv(i_path)
+    try:
+        fac_df = pd.read_csv(fac_path)
+        icd_df = pd.read_csv(icd_path)
+        icd_df['icd10'] = icd_df['icd10'].astype(str).str.strip()
+        return fac_df, icd_df
+    except Exception:
+        # Fallback if you moved them to the first 'data' folder
+        try:
+            fac_df = pd.read_csv('data/meghalaya_facilities.csv')
+            icd_df = pd.read_csv('data/icd_catalogue.csv')
             icd_df['icd10'] = icd_df['icd10'].astype(str).str.strip()
             return fac_df, icd_df
+        except Exception as e:
+            st.error(f"🚨 FILES NOT IN /data/ OR /data/data/ : {e}")
+            st.stop()
 
-    # If we get here, the files are truly missing
-    st.error("🚨 CRITICAL: Data Files Not Found.")
-    st.info(f"Current Working Directory: {os.getcwd()}")
-    st.info(f"Visible Files: {os.listdir('.')}")
-    st.stop()
-# Call the function to actually load the data into the global variables
+# CRITICAL: Ensure these global assignments are OUTSIDE the function
 facilities_df, icd_catalogue_df = load_datasets()
 
 # 5. Live Geolocation Integration
