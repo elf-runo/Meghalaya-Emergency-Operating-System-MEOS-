@@ -267,7 +267,7 @@ def validated_triage_decision(vitals, icd_df_row, context):
         return "YELLOW", {"driver": "Physiology", "reason": f"Elevated Risk ({ews_type}: {score})", "ews": score}
     
     return "GREEN", {"driver": "Physiology", "reason": f"Hemodynamically Stable ({ews_type}: {score})", "ews": score}
-        return None, None
+    
 # ==========================================
 # MODULE 3: THE LOGISTICAL ENGINE
 # ==========================================
