@@ -113,8 +113,8 @@ init_db()
 def load_datasets():
     """Loads CSV files robustly, stopping the app with clear errors if missing."""
     try:
-        fac_df = pd.read_csv('data/meghalaya_facilities.csv')
-        icd_df = pd.read_csv('data/icd_catalogue.csv')
+        facilities_df = pd.read_csv('data/data/meghalaya_facilities.csv')
+        icd_catalogue_df = pd.read_csv('data/data/icd_catalogue.csv')
         icd_df['icd10'] = icd_df['icd10'].astype(str).str.strip()
         return fac_df, icd_df
     except FileNotFoundError as e:
