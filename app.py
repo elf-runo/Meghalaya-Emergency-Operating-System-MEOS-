@@ -111,18 +111,30 @@ init_db()
 # 4. Data Caching Layer (Performance Optimization)
 @st.cache_data
 def load_datasets():
-    """Loads CSV files robustly, stopping the app with clear errors if missing."""
-    try:
-        facilities_df = pd.read_csv('data/data/meghalaya_facilities.csv')
-        icd_catalogue_df = pd.read_csv('data/data/icd_catalogue.csv')
-        icd_df['icd10'] = icd_df['icd10'].astype(str).str.strip()
-        return fac_df, icd_df
-    except FileNotFoundError as e:
-        st.error(f"🚨 Data File Missing: {str(e)}")
-        st.warning("Please ensure 'meghalaya_facilities.csv' and 'icd_catalogue.csv' are placed in a folder named 'data' in your repository root.")
-        st.stop()
+    """Dynamically locates and loads CSV files regardless of nesting."""
+    import os
+    
+    # Potential paths where the files might be hiding
+    potential_paths = ['', 'data/', 'data/data/']
+    fac_file = 'meghalaya_facilities.csv'
+    icd_file = 'icd_catalogue.csv'
+    
+    fac_df, icd_df = None, None
+    
+    for path in potential_paths:
+        f_path = os.path.join(path, fac_file)
+        i_path = os.path.join(path, icd_file)
+        if os.path.exists(f_path) and os.path.exists(i_path):
+            fac_df = pd.read_csv(f_path)
+            icd_df = pd.read_csv(i_path)
+            icd_df['icd10'] = icd_df['icd10'].astype(str).str.strip()
+            return fac_df, icd_df
 
-facilities_df, icd_catalogue_df = load_datasets()
+    # If we get here, the files are truly missing
+    st.error("🚨 CRITICAL: Data Files Not Found.")
+    st.info(f"Current Working Directory: {os.getcwd()}")
+    st.info(f"Visible Files: {os.listdir('.')}")
+    st.stop()
 
 # 5. Live Geolocation Integration
 def fetch_user_location():
