@@ -362,7 +362,81 @@ def allocate_ambulance_type(triage_color, required_interventions, eta_minutes):
         return "ALS", "Critical instability mandates ALS monitoring."
         
     # Gate 3: Topographical Degradation Risk
-    if triage_color == "YELLOW" and eta_minutes > 45
+    if triage_color == "YELLOW" and eta_minutes > 45:
+        return "ALS", f"Prolonged transit ({round(eta_minutes)} mins) creates high deterioration risk."
+        
+    # Fleet Shield (Non-Emergency)
+    if triage_color == "GREEN":
+        return "TAXI", "Commercial Health Cab authorized. Medical fleet preserved."
+        
+    return "BLS", "Patient is stable for Basic Life Support."
+
+# --- 3. Gated Multiplicative Facility Matching ---
+
+def calculate_enhanced_facility_score_free(facility, required_caps, route_data, triage_color):
+    """
+    Evaluates facilities using absolute clinical safety gates 
+    before applying fiscal/logistical weighting.
+    """
+    scoring_details = {}
+    eta_minutes = route_data.get('min', 999)
+    
+    # Safely extract capacity and ownership
+    icu_beds = int(facility.get("has_icu", 0)) * random.randint(0, 5) # Simulating dynamic live beds for MVP
+    is_gov = (facility.get("ownership", "Private") == "Government")
+    
+    # ==========================================
+    # GATE 1: Absolute Capability Multiplier
+    # ==========================================
+    if required_caps:
+        has_all_caps = all(facility.get(cap, 0) == 1 for cap in required_caps if cap in facility)
+        if not has_all_caps:
+            scoring_details['gate_cap'] = "FAILED"
+            return 0, scoring_details
+            
+    scoring_details['gate_cap'] = "PASSED"
+    
+    # ==========================================
+    # GATE 2: Critical Capacity Multiplier
+    # ==========================================
+    requires_bed = "has_icu" in required_caps or triage_color == "RED"
+    if requires_bed and icu_beds < 1:
+        scoring_details['gate_bed'] = "FAILED"
+        return 0, scoring_details
+        
+    scoring_details['gate_bed'] = "PASSED"
+
+    # ==========================================
+    # SURVIVOR WEIGHTING (Max 100 Points)
+    # ==========================================
+    score = 0
+    
+    # 1. Time-to-Definitive-Care (Max 50)
+    prox_score = 0
+    if eta_minutes <= 30: prox_score = 50
+    elif eta_minutes <= 60: prox_score = 35
+    elif eta_minutes <= 90: prox_score = 15
+    
+    score += prox_score
+    scoring_details['prox'] = prox_score
+    scoring_details['eta'] = round(eta_minutes, 1)
+    
+    # 2. Surge Buffer (Max 15)
+    icu_score = 0
+    if icu_beds >= 3: icu_score = 15
+    elif icu_beds == 2: icu_score = 10
+    elif icu_beds == 1: icu_score = 5
+        
+    score += icu_score
+    scoring_details['beds'] = icu_beds
+    scoring_details['bed_sc'] = icu_score
+    
+    # 3. Fiscal Guardrail / State Asset Utilization (Max 20)
+    fiscal_score = 20 if is_gov else 0
+    score += fiscal_score
+    scoring_details['fisc'] = fiscal_score
+    
+    return score, scoring_details
 # ==========================================
 # MODULE 4: ROLE-BASED UI (Part 1)
 # ==========================================
